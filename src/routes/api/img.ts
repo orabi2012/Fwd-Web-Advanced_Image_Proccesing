@@ -5,7 +5,7 @@ const img = express.Router();
 
 
 img.get('/', (req, res) => {
-    res.send('i am img' + req.baseUrl);
+    res.send('i am IMAGE' + 'MY ROUTE IS ' +  req.baseUrl);
     
     
 });
