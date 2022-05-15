@@ -2,7 +2,7 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 
 import routes from './routes/index';
-import img from './routes/api/img';
+import img from './routes/api/images';
 //import check from './utilities/reqCheck';
 
 //port setting
@@ -14,7 +14,7 @@ const app: express.Application = express();
 // HTTP request logger middleware
 
 app.use('/api', routes);
-app.use('/api/img', img);
+app.use('/api/images', img);
 //app.use('check', check);
 
 app.listen(PORT, () => {
