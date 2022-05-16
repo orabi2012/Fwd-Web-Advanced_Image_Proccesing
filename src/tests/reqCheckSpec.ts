@@ -13,4 +13,3 @@ it('test for image name ', () => {
     'Image Not Found'
   );
 });
-

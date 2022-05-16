@@ -21,7 +21,6 @@ function check_img_name(
   height: string,
   width: string
 ) {
-
   const img = path.join(__dirname, '..', `/images/${imgName}.jpg`);
 
   if (!fs.existsSync(img)) {
