@@ -17,6 +17,12 @@ app.use('/api', routes);
 app.use('/api/images', img);
 //app.use('check', check);
 
+app.get('/', function (req, res) {
+  res.status(200).send(`i am Express server , Running @ port ${PORT}`);
+});
+
 app.listen(PORT, () => {
   console.log(`i am Express server , Running @ port ${PORT}`);
 });
+
+export default app;
