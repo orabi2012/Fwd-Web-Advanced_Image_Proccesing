@@ -8,15 +8,13 @@
         "lint": "eslint .",
         "lint:fix": "eslint --fix",
         "format": "prettier --write src/**/*.ts",
-        "jasmine": "npx tsc && copyfiles -u 1 src/images/*.*  dist/ && jasmine"
-       
+        "jasmine": "npx tsc && jasmine"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "@types/sharp": "^0.30.2",
-        "copyfiles": "^2.4.1",
         "dotenv": "^16.0.1",
         "express": "^4.18.1",
         "jasmine": "^4.1.0",

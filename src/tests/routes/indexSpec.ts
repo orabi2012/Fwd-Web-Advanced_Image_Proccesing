@@ -4,7 +4,6 @@ import app from '../../app';
 const request = supertest(app);
 
 describe('GET /api', function () {
- 
   it('check /api Endpoint is Found = 200', async () => {
     const response = await request.get('/api');
     expect(response.status).toBe(200);

@@ -1,27 +1,17 @@
 import supertest from 'supertest';
 import app from '../../../app';
-import fs from 'fs';
-
-
-
-
-
+// import fs from 'fs';
 
 const request = supertest(app);
 
+// beforeAll(() => {
+//   const dir = './dist/images/thumb';
 
-beforeAll(() => {
-    
-    const dir = './dist/images/thumb';
-
-    if (!fs.existsSync(dir)){
-        fs.mkdirSync(dir);
-    }
-
-   });
+//   if (!fs.existsSync(dir)) {
+//     fs.mkdirSync(dir);
+//   }
+// });
 describe('Check Image Endpoint /api/images/:imgName/:height/:width', function () {
-
-
   it('check /api/images/fjord/100/100 => Image Found', async () => {
     const response = await request.get('/api/images/fjord/100/100');
     expect(response.status).toBe(200);
@@ -43,5 +33,4 @@ describe('Check Image Endpoint /api/images/:imgName/:height/:width', function ()
     expect(response.status).toBe(400);
     //done();
   });
-
 });

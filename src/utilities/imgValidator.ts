@@ -10,16 +10,16 @@ function check_img_name(
 ) {
   const imgName: string = req.params.imgName;
 
-  const img = path.join(__dirname, '..', `/images/${imgName}.jpg`);
+  const img = path.join(__dirname, '../..', `/images/${imgName}.jpg`);
 
   // console.log(imgName);
 
   if (!fs.existsSync(img)) {
     res.statusCode = 404;
-    console.log('Image Not Found')
+    console.log('Image Not Found');
     return res.send('Image Not Found');
   } else {
-   // console.log('Image Found !!!!')
+    // console.log('Image Found !!!!')
     next();
     //   await check_img_size(height, width);
   }
@@ -66,7 +66,7 @@ async function check_img_exist(
 
   const newimg = path.join(
     __dirname,
-    '..',
+    '../..',
     `/images/thumb/${imgName}_${w}_${h}.jpg`
   );
 
@@ -89,15 +89,23 @@ async function create_img(
 
   const h = parseInt(height);
   const w = parseInt(width);
-  await sharp(path.join(__dirname, '..', `/images/${imgName}.jpg`))
+
+  const thumb_dir = path.join(__dirname, '../..', `/images/thumb`);
+  if (!fs.existsSync(thumb_dir)) {
+    fs.mkdir(thumb_dir, { recursive: true }, (err) => {
+      err?.message;
+    });
+  }
+
+  await sharp(path.join(__dirname, '../..', `/images/${imgName}.jpg`))
     .resize(w, h)
     .toFile(
-      path.join(__dirname, '..', `/images/thumb/${imgName}_${w}_${h}.jpg`)
+      path.join(__dirname, '../..', `/images/thumb/${imgName}_${w}_${h}.jpg`)
     );
 
   res.statusCode = 200;
   return res.sendFile(
-    path.join(__dirname, '..', `/images/thumb/${imgName}_${w}_${h}.jpg`)
+    path.join(__dirname, '../..', `/images/thumb/${imgName}_${w}_${h}.jpg`)
   );
   next();
 }
