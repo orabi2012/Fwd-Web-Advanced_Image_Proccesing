@@ -5,6 +5,7 @@ FWD - Udacity web development Advanced Track project
 ### to install dependencies run (npm install)
 
 ### to run applicatin (nodemon)
+
 #### setting at nodemon.js file
 
 ### entry poin => app.ts
@@ -16,13 +17,23 @@ FWD - Udacity web development Advanced Track project
 ##### '/api' , '/'   = Home 
 ##### /:imgName/:height/:width
 
-###### imgName (images at ./images folder)
-###### height & width positive numbers
+#### http://localhost:3000/api/images/fjord/600/500
 
-### to build js from Ts  => npm run build (build folder '/dist')
+###### imgName (images at ./images folder) like fjord
+###### height & width positive numbers    
 
-### Unit testing => npm run jasmine
- this will 
-1- run build 
-2- Copy image folder to /dist
-3- run jasmine test 
+
+## "scripts":  npm run 
+
+####        "build": "npx tsc", => TS to Js (build folder '/dist')
+
+####        "lint": "eslint .", => ESLint
+
+####       "lint:fix": "eslint --fix", => EsLint Fix
+
+####       "format": "prettier --write src/**/*.ts", => prettier Formatting 
+
+####        "jasmine": "npx tsc && jasmine" => Build  then run jasmine testing
+
+
+## GitHub https://github.com/orabi2012/Fwd-Web-Advanced_Image_Proccesing
