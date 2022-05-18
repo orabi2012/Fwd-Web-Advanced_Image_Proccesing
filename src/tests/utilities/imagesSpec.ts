@@ -1,5 +1,5 @@
 import supertest from 'supertest';
-import app from '../../../app';
+import app from '../../app';
 // import fs from 'fs';
 
 const request = supertest(app);
@@ -17,6 +17,7 @@ describe('Check Image Endpoint /api/images/:imgName/:height/:width', function ()
     expect(response.status).toBe(200);
     //done();
   });
+
   it('check /api/images/fjordx/100/100 => Image Not Found', async () => {
     const response = await request.get('/api/images/fjordx/100/100');
     expect(response.status).toBe(404);

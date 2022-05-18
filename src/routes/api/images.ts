@@ -1,4 +1,5 @@
-import express from 'express';
+//import express from 'express';
+import express, { Request, Response } from 'express';
 
 //import { check } from '../../utilities/reqCheck';
 //import check_img_name from '../../utilities/imgValidator';
@@ -19,7 +20,7 @@ img.get(
   check_img_size,
   check_img_exist,
   create_img,
-  async (req, res) => {
+  async (req: Request, res: Response) => {
     res.send('Image Found').status(200);
   }
 );
