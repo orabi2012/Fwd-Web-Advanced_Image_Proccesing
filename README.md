@@ -4,7 +4,7 @@ FWD - Udacity web development Advanced Track project
 
 ### to install dependencies run (npm install)
 
-### to run applicatin (nodemon)
+### to run applicatin (start)
 
 #### setting at nodemon.js file
 
@@ -24,6 +24,8 @@ FWD - Udacity web development Advanced Track project
 
 
 ## "scripts":  npm run 
+
+####        "start" : "nodemon", => to run the application
 
 ####        "build": "npx tsc", => TS to Js (build folder '/dist')
 
